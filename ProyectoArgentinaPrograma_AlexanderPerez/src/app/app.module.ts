@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoCursoComponent } from './components/logo-curso/logo-curso.component';
-import { SocialmediaComponent } from './components/socialmedia/socialmedia.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
@@ -19,8 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    LogoCursoComponent,
-    SocialmediaComponent,
+    LogoCursoComponent,    
     BannerComponent,
     AcercaDeComponent,
     ExperienciaComponent,

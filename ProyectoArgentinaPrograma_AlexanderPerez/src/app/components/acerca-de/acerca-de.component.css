@@ -4,33 +4,47 @@
 div{
     background-color: #52d7ff;
     text-align: center;
-}
+   }
 
 /*etiqueta nombre*/
-#name{
+/* #name{
     font-weight: bold;
-    margin-top: 5%;
+    font-size: 2em;
+    margin-top: 35%;
     
-}
+} */
 
 /*estilo foto perfil*/
-@media (min-width: 565px) {
+@media (min-width: 565px)  {
     #profilePicture{
         position: absolute;
-        width:15%;
+        width:12%;
         border-radius: 20%;
         box-shadow: 3px 3px 3px #5d6061;
         left: 3%;
-        top: 550px;
+        top: 600px;
+        margin-left: 1px;
+    }
+    #name{
+        font-weight: bold;
+        font-size: 2em;
+        margin-top:2%;
+        
     }
 }
 @media (max-width: 564px) {
         #profilePicture{
             position: absolute;
-            width:30%;
+            width:35%;
             border-radius: 20%;
             box-shadow: 3px 3px 3px #5d6061;
             left: 33%;
-            top: 650px;
+            top: 900px;
+        }
+        #name{
+            font-weight: bold;
+            font-size: 2em;
+            margin-top: 35%;
+            
         }
     }
