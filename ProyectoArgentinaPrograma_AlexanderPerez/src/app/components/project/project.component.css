@@ -1,0 +1,17 @@
+.row{
+    padding:10px;
+    background-color: #52d7ff;
+}
+
+.contenedor{
+    width: auto;
+}
+.uno, .dos{
+    display: inline-block;
+    text-align: justify;
+}
+
+.img-project{
+    border-radius: 50%;
+
+}
