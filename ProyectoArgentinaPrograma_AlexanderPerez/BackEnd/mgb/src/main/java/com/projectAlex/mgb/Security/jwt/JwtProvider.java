@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtProvider {
-
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
     @Value("${jwt.secret}")
@@ -26,21 +25,21 @@ public class JwtProvider {
 
     public String generateToken(Authentication authentication) {
         usuarioPrincipal UsuarioPrincipal = (usuarioPrincipal) authentication.getPrincipal();
-        return Jwts.builder().setSubject(UsuarioPrincipal.getUsername())
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(new Date().getTime()+expiration * 1000))
+        return Jwts.builder().setSubject(UsuarioPrincipal.getUsername( ) )
+                .setIssuedAt(new Date( ) )
+                .setExpiration(new Date(new Date( ).getTime( )+expiration * 1000) )
                 .signWith(SignatureAlgorithm.HS512, secret)
-                .compact();
+                .compact( );
     }
 
     public String getNombreUsuarioFromToken(String token) {
         return Jwts.parser().setSigningKey(secret)
-                .parseClaimsJws(token).getBody().getSubject();
+                .parseClaimsJws(token).getBody( ).getSubject( );
     }
 
     public boolean validateToken(String token) {
         try {
-            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
+            Jwts.parser( ).setSigningKey(secret).parseClaimsJws(token);
             return true;
         } catch (MalformedJwtException e) {
             logger.error("Token mal Formado");

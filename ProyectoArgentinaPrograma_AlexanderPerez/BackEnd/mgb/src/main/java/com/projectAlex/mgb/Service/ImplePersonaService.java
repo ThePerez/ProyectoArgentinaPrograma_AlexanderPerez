@@ -4,7 +4,6 @@ import com.projectAlex.mgb.Entity.Persona;
 import com.projectAlex.mgb.Interface.IpersonaService;
 import com.projectAlex.mgb.Repository.IPersonaRepository;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,13 +29,15 @@ public class ImplePersonaService implements IpersonaService{
 
     @Override
     public Persona buscaPersona(Long id) {
-        return ipersonaRepository.findById(id).orElse(null);
+        Persona persona = ipersonaRepository.findById(id).orElse(null);
+        return persona;
     }
 
     @Override
     public Persona buscaPersona(int i) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+      
     
 }

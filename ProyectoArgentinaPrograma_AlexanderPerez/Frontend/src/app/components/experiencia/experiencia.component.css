@@ -1,10 +1,9 @@
-.raw{
+.row{
     padding: 15px;
 }
 div{
     background: #52d7ff;
 }
 h1, h3{
-    display: inline;
-    margin-top: 25px;
+    display: inline;   
 }

@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class PersonaController {
 
-    @Autowired
-    IpersonaService ipersonaService;
+    @Autowired IpersonaService ipersonaService;
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/personas/traer")
-    public List<Persona> getPersona() {
-        return ipersonaService.getPersona();
+    public List<Persona> getPersona( ) {
+        return ipersonaService.getPersona( );
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -36,31 +36,30 @@ public class PersonaController {
     }
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/eliminar/{id}")
-    public String deleteString(@PathVariable Long id) {
+    public String deletePersona(@PathVariable Long id) {
         ipersonaService.deletePersona(id);
         return "Se eliminó persona";
     }
-    @PreAuthorize("hasRole('ADMIN')")
+    
+    @PreAuthorize("hasRole ('ADMIN') " )    
     @PutMapping("/personas/actualizar/{id}")
     public Persona editPersona(@PathVariable Long id,
-            @RequestParam("nombre") String newNombre,
-            @RequestParam("apellido") String newApellido,
-            @RequestParam("img") String newImg) {
+                                                           @RequestParam("nombre") String newNombre,
+                                                           @RequestParam("apellido") String newApellido,
+                                                           @RequestParam("img") String newImg) {
 
         Persona persona = ipersonaService.buscaPersona(id);
 
         persona.setNombre(newNombre);
         persona.setApellido(newApellido);
         persona.setImg(newImg);
-        {
-
+        
             ipersonaService.guardarPersona(persona);
             return persona;
-        }
-    }
+        }    
 
     @GetMapping("/personas/traer/perfil")
-    public Persona buscaPersona() {
-        return ipersonaService.buscaPersona((long) 1);
+    public Persona buscaPersona( ) {
+        return ipersonaService.buscaPersona( (long) 1);
     }
 }
