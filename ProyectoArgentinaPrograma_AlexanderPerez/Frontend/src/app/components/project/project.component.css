@@ -1,8 +1,7 @@
 .row{
-    padding:10px;
+    padding:15px;
     background-color: #52d7ff;
 }
-
 .contenedor{
     width: auto;
 }
@@ -13,5 +12,4 @@
 
 .img-project{
     border-radius: 50%;
-
 }

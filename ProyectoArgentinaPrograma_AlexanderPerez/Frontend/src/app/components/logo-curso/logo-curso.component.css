@@ -1,35 +1,82 @@
-.container{
+.container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;     
 }
-
-.redes{
-    margin-right: 0.5em;
+html {
+    font-size: 16px;    
 }
-
-#LogoCurso{
-    width: 150px;
+.redes {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
 }
-
-img { 
-    width : 50px; 
+.icon {
+    color: white;
+    text-decoration: none;
+    padding: .9rem;
+    display: flex;
+    transition: all .5s;
 }
-
-.btn{
+.icon-facebook{
+    background: #2e406e;
+}
+.icon-twitter{
+    background: #339dc5;
+}
+.icon-instagram{
+    background: #3f60a5;
+}
+.icon-github{
+    background: #967bb6;
+}
+.icon-linkedin{
+    background: #0e76a8;
+}
+.icon:first-child{
+    border-radius: 1rem 0 0 0;
+}
+.icon:last-child{
+    border-radius:  0 0 0 1rem ;
+}
+.icon:hover{
+    padding-left: 2rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgba(0,0,0,0.42) ;
+}
+#LogoCurso {
+    width: 200px;
+}
+img {
+    width: 40px;
+}
+.btn {
     border-width: medium;
+    margin-right: 2em;
 }
 
-@media (max-width: 564px){
-    .container{
+
+
+
+/**para Celulares**/
+
+@media (max-width: 575px) {
+    .container {
         flex-direction: column;
-              }
-    .redes{
+    }
+    .redes {
         display: flex;
         flex-direction: column;
-        align-items: center;
-          }
-    .redes img{ 
-        margin: 0.4em;
-        }
+    }  
+
+    .btn {
+        display: flex;
+        margin-bottom: 1em;
+        align-content: center;
+    }
 }

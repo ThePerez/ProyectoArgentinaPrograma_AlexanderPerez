@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 
-
 public class JwtTokenFilter extends OncePerRequestFilter {
     
  private final static Logger logger = LoggerFactory.getLogger(JwtTokenFilter.class);
@@ -26,8 +25,13 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     UserDetailsImpl userDetailsServiceImpl;
     
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, 
-            FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(
+            HttpServletRequest request, 
+            HttpServletResponse response, 
+            FilterChain filterChain) throws 
+            ServletException,
+            IOException {
+        
         try {
             String token = getToken(request);
             if (token != null && jwtProvider.validateToken(token)) {
@@ -35,8 +39,8 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                 
                 UserDetails userDetails = userDetailsServiceImpl.loadUserByUsername(nombreUsuario);
                 
-                UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, 
-                        null, userDetails.getAuthorities( ));
+                UsernamePasswordAuthenticationToken auth = new 
+                UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities( ));
                 
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }        

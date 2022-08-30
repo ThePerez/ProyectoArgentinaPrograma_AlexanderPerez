@@ -7,27 +7,27 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class SExperienciaService {
-  expURL = 'http://localhost:8080/explab/'
+  expURL = 'https://bkd-theperez.herokuapp.com/explab/'
 
   constructor(private httpclient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]>{
-    return this.httpclient.get<Experiencia[]>(this.expURL + 'lista');
+    return this.httpclient.get<Experiencia[]>(this.expURL+`lista`);
   }
 
   public detail(id:number): Observable<Experiencia>{
-    return this.httpclient.get<Experiencia>(this.expURL + `detail/${id}`);
+    return this.httpclient.get<Experiencia>(this.expURL+`detail/${id}`);
   }
 
   public save(experiencia:Experiencia): Observable<any>{
-    return this.httpclient.post<any>(this.expURL +'create',experiencia);
+    return this.httpclient.post<any>(this.expURL+`create`,experiencia);
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any>{
-    return this.httpclient.put<any>(this.expURL + `update/${id}`, experiencia);
+    return this.httpclient.put<any>(this.expURL+`update/${id}`, experiencia);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpclient.delete<any>(this.expURL +  `delete/${id}`);
+    return this.httpclient.delete<any>(this.expURL+`delete/${id}`);
   }
 }

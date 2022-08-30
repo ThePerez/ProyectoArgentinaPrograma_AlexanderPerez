@@ -1,20 +1,17 @@
-package Dto;
+package com.projectAlex.mgb.Dto;
 
 import javax.validation.constraints.NotBlank;
 
-
-public class dtoExperiencia {
+public class dtoEducacion {
     @NotBlank
     private String nombreE;
+    
     @NotBlank
     private String descripcionE;
     
-    //Const
-
-    public dtoExperiencia() {
-    }
-
-    public dtoExperiencia(String nombreE, String descripcionE) {
+    public dtoEducacion( ){
+}
+    public dtoEducacion (String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
@@ -33,6 +30,7 @@ public class dtoExperiencia {
 
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
-    }    
+    }
+    
     
 }

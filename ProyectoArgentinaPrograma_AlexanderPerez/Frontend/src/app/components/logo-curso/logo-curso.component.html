@@ -1,17 +1,20 @@
 <div class="row">
-    <div class="container">
+    <div class="container">                 
+        
         <div class="logo">
             <img src="../../../assets/APLogo.png" id="LogoCurso">
         </div>
-        <div class="redes">            
-                <a href=""><img src="../../../assets/twitter.png" id="twitter"></a>
-                <a href=""><img src="../../../assets/instagram.png" id="instagram"></a>
-                <a href=""><img src="../../../assets/facebook.png" id="facebook"></a>
-                <a href=""><img src="../../../assets/github1.png" id="github"></a>
-                <a href=""><img src="../../../assets/linkedin.png" id="linkedin"></a>
+        <div class="boton" >
                 <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged"> INGRESAR </button>
-                <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged"> CERRAR SESION </button>            
+                <button type="button" class="btn btn-light" (click)="onLogOut()" *ngIf="isLogged"> CERRAR SESION </button>            
         </div>
+    </div>
+    <div class="redes" >            
+                <a href="https://twitter.com/" class="icon icon-twitter"   target="blank"><img src="../../../assets/twitter.png" id="twitter"></a>
+                <a href="https://www.instagram.com/" class="icon icon-instagram" target="blank"><img src="../../../assets/instagram.png" id="instagram"></a>
+                <a href="https://www.facebook.com/" class="icon icon-facebook"  target="blank"><img src="../../../assets/facebook.png" id="facebook"></a>
+                <a href="https://github.com/theperez" class="icon icon-github"    target="blank"><img src="../../../assets/github1.png" id="github"></a>
+                <a href="https://www.linkedin.com/in/alexpp/" class="icon icon-linkedin"  target="blank"><img src="../../../assets/linkedin.png" id="linkedin"></a>
     </div>    
 </div>
 
